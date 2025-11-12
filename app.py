@@ -8,6 +8,9 @@ app = Flask(__name__)
 @app.route("/", methods=["GET"])
 def home():
     return "✅ LaTeX PDF API is running!"
+@app.route('/health', methods=['GET'])
+def health():
+    return "OK", 200
 
 @app.route("/compile", methods=["POST"])
 def compile_pdf():
